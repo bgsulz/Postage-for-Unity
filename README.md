@@ -18,7 +18,7 @@ using Extra.Postman;
 using UnityEngine;
 
 public class Sender : MonoBehaviour
-{//
+{
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
