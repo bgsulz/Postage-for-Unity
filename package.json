@@ -1,7 +1,7 @@
 {
 	"name": "com.bgs.postman",
 	"version": "0.0.1",
-	"displayName": "Get",
+	"displayName": "Postman",
 	"description": "A hassle-free, no-baloney event system for Unity projects.",
 	"unity": "2022.2",
 	"dependencies": {},
