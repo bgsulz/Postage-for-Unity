@@ -1,0 +1,16 @@
+{
+    "name": "com.bgs.extra.postman.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:633eb5b5cd59c2b4e9f0ca5d199bed99"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

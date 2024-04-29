@@ -1,0 +1,14 @@
+{
+	"name": "com.bgs.postman",
+	"version": "0.0.1",
+	"displayName": "Get",
+	"description": "A hassle-free, no-baloney event system for Unity projects.",
+	"unity": "2022.2",
+	"dependencies": {},
+	"keywords": ["event, message, unity"],
+	"author": {
+		"name": "Ben Sulzinsky",
+		"email": "bsulzinsky@gmail.com",
+		"url": "https://bgsulz.com"
+	}
+}
