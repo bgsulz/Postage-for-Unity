@@ -19,11 +19,11 @@ using UnityEngine;
 
 public class Sender : MonoBehaviour
 {
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-			Message.Send("key down", KeyCode.Space);
-	}
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            Message.Send("key down", KeyCode.Space);
+    }
 }
 ```
 
@@ -35,22 +35,22 @@ using UnityEngine;
 
 public class Receiver : MonoBehaviour
 {
-	private void OnEnable()
-	{
-		// The type parameter filters received messages.
-		// Only messages with data of type KeyCode will invoke PrintKeyPressed.
-		Message.Subscribe<KeyCode>("key down", PrintKeyPressed);
-	}
-	
-	private void OnDisable()
-	{
-		Message.Unsubscribe<KeyCode>("key down", PrintKeyPressed);
-	}
-	
-	private void PrintKeyPressed(KeyCode code)
-	{
-		Debug.Log($"{code} was pressed!");
-	}
+    private void OnEnable()
+    {
+        // The type parameter filters received messages.
+        // Only messages with data of type KeyCode will invoke PrintKeyPressed.
+        Message.Subscribe<KeyCode>("key down", PrintKeyPressed);
+    }
+    
+    private void OnDisable()
+    {
+        Message.Unsubscribe<KeyCode>("key down", PrintKeyPressed);
+    }
+    
+    private void PrintKeyPressed(KeyCode code)
+    {
+        Debug.Log($"{code} was pressed!");
+    }
 }
 ```
 
@@ -69,25 +69,25 @@ using UnityEngine;
 // instead of Message.Subscribe().
 public class FancyReceiver : MessageBehaviour
 {
-	// You can use a string or an AddressSO ScriptableObject as an address.
-	// AddressField lets you toggle between the two in the Inspector.
-	// Just pass it in like a normal address.
-	[SerializeField] private AddressField address;
-
-	protected override void Subscribe(MessageBus bus)
-	{		
-		// Subscribe with the type parameter "object"
-		// to receive all messages with data of any type.
-		bus.Subscribe<object>(address, PrintKeyPressed);
-	}
-	
-	private void PrintKeyPressed(object data)
-	{
-		if (data is KeyCode code)
-			Debug.Log($"{code} was pressed!");
-		else
-			Debug.Log($"Received data: {data}");
-	}
+    // You can use a string or an AddressSO ScriptableObject as an address.
+    // AddressField lets you toggle between the two in the Inspector.
+    // Just pass it in like a normal address.
+    [SerializeField] private AddressField address;
+    
+    protected override void Subscribe(MessageBus bus)
+    {		
+        // Subscribe with the type parameter "object"
+        // to receive all messages with data of any type.
+        bus.Subscribe<object>(address, PrintKeyPressed);
+    }
+    
+    private void PrintKeyPressed(object data)
+    {
+        if (data is KeyCode code)
+            Debug.Log($"{code} was pressed!");
+        else
+            Debug.Log($"Received data: {data}");
+    }
 }
 ```
 
