@@ -8,7 +8,7 @@ namespace Extra.Postman.Timeline
         public void OnNotify(Playable origin, INotification notification, object context)
         {
             if (notification is not MessageMarker postmanMarker) return;
-            Message.Send(postmanMarker.AddressField, postmanMarker.Parcel);
+            postmanMarker.Send();
         }
     }
 }

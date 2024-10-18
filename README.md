@@ -1,12 +1,17 @@
 # Postman
 
-| [License](LICENSE) | [Features](FEATURES.md) |
-| - | - |
+| [License](License.md) |
+| - |
 
 ___
 
 **Hassle-free event system for Unity projects.**
 Shuttle around arbitrary data; use the Inspector as much or as little as you want.
+
+#### Features:
+- Baloney-free experience.
+- Integrates with Timeline.
+- Debug window to track event messages.
 
 ---
 

@@ -5,6 +5,8 @@ namespace Extra.Postman.Editor
 {
     public class PostmanDebugEditorWindow : EditorWindow
     {
+        const float MinTextWidth = 30;
+
         private static GUIStyle _box;
         private static GUIStyle Box => _box ??= new(EditorStyles.helpBox)
         {
@@ -17,6 +19,12 @@ namespace Extra.Postman.Editor
         {
             margin = new(0, 0, 0, 0),
             padding = new(0, 0, 0, 0)
+        };
+
+        private static GUIStyle _labelRight;
+        private static GUIStyle LabelRight => _labelRight ??= new(EditorStyles.label)
+        {
+            alignment = TextAnchor.MiddleRight
         };
 
         private Vector2 _scrollPosition;
@@ -32,7 +40,7 @@ namespace Extra.Postman.Editor
             using (new EditorGUILayout.HorizontalScope())
             {
                 GUILayout.FlexibleSpace();
-                if (GUILayout.Button("Clear", GUILayout.Width(60))) Reports.ClearReports();
+                if (GUILayout.Button("Clear", style: EditorStyles.toolbarButton, GUILayout.Width(60))) Reports.ClearReports();
             }
 
             using (var scroll = new EditorGUILayout.ScrollViewScope(_scrollPosition))
@@ -48,16 +56,19 @@ namespace Extra.Postman.Editor
 
         private void DrawReport(Report report)
         {
-            bool didClickButton;
+            var didClickButton = false;
 
             using (new EditorGUILayout.VerticalScope(style: Box))
             {
                 using (new EditorGUILayout.HorizontalScope())
                 {
-                    EditorGUILayout.LabelField($"Address: {report.Address.Key}", GUILayout.MinWidth(60), GUILayout.ExpandWidth(true));
-                    EditorGUILayout.LabelField($"Parcel: {report.Parcel}", GUILayout.MinWidth(60), GUILayout.ExpandWidth(true));
+                    EditorGUILayout.LabelField($"To: {report.Address.Key}", GUILayout.MinWidth(MinTextWidth), GUILayout.ExpandWidth(true));
+                    EditorGUILayout.LabelField($"[{report.ParcelTypeAsString}] {report.ParcelAsString}", style: LabelRight, GUILayout.MinWidth(MinTextWidth), GUILayout.ExpandWidth(true));
                 }
-                didClickButton = GUILayout.Button(report.CallerInfo.ToString(), Link);
+                if (report.CallerInfo.SourceFilePath.EndsWith("MessageTrack.cs"))
+                    EditorGUILayout.LabelField("Sent from Timeline");
+                else
+                    didClickButton = GUILayout.Button(report.CallerInfo.ToString(), Link);
             }
 
             if (didClickButton)

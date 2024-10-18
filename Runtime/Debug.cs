@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Extra.Postman
@@ -10,14 +11,44 @@ namespace Extra.Postman
         public Address Address { get; }
         public object Parcel { get; }
 
+        public Type ParcelType { get; }
+        public string ParcelTypeAsString { get; }
+        public string ParcelAsString { get; }
+
         public Report(CallerInfo callerInfo, Address address, object parcel)
         {
             CallerInfo = callerInfo;
             Address = address;
             Parcel = parcel;
+
+            ParcelType = Parcel.GetType();
+            ParcelTypeAsString = CalculateStringType(ParcelType);
+            ParcelAsString = CalculateStringRepresentation(Parcel);
         }
 
-        public override string ToString() => $"{Parcel} -> {Address.Key}";
+        private string CalculateStringType(Type type)
+        {
+            if (type == typeof(int)) return "int";
+            if (type == typeof(float)) return "float";
+            if (type == typeof(string)) return "string";
+            if (type == typeof(Color)) return "Color";
+            if (type == typeof(Vector2)) return "Vector2";
+            if (type == typeof(Vector3)) return "Vector3";
+            if (type == typeof(Vector2Int)) return "Vector2Int";
+            if (type == typeof(Vector3Int)) return "Vector3Int";
+            return type.ToString().Split(".").Last();
+        }
+
+        private string CalculateStringRepresentation(object parcel)
+        {
+            if (parcel == null) return "--null--";
+            if (parcel is not string str) return parcel.ToString();
+            if (str == string.Empty) return "--empty string--";
+            if (string.IsNullOrWhiteSpace(str)) return $"--whitespace:{str}--";
+            return str;
+        }
+
+        public override string ToString() => $"{ParcelAsString} -> {Address.Key}";
     }
 
     public class CallerInfo
@@ -48,7 +79,14 @@ namespace Extra.Postman
 
     public static class Reports
     {
-        private static int _maxStoredReports = 32;
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics()
+        {
+            _maxStoredReports = 128;
+            _storedReports = new(_maxStoredReports);
+        }
+
+        private static int _maxStoredReports = 128;
         private static Queue<Report> _storedReports = new(_maxStoredReports);
 
         public static int MaxStoredReports
@@ -58,7 +96,7 @@ namespace Extra.Postman
             {
                 if (value < 0) return;
                 _maxStoredReports = value;
-                _storedReports = new Queue<Report>(_maxStoredReports);
+                _storedReports = new(_maxStoredReports);
             }
         }
 

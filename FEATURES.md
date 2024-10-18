@@ -1,5 +1,5 @@
 ## Send and receive messages
-##### Zero baloney.
+#### Zero baloney.
 
 Call `Message.Send` with an address (a string) and optionally a parameter.
 
@@ -41,13 +41,11 @@ public class SendAndReceive : MonoBehaviour
 ```
 
 ## Debug incoming messages
-##### No more "why is that happening?"
+#### No more "why is that happening?"
 
 Open the Postman Debug window (`Window > Postman Debug`) to see a live-updating record of all incoming events.
 
 ## Send messages from the timeline
-##### A simpler alternative to Signal Emitters.
+#### A simpler alternative to Signal Emitters.
 
 Add a `MessageTrack` to a Unity Timeline, bind it to a `TimelineMessageReceiver`, and right click to add Message Markers. These will call `Message.Send` when played.
-
-Currently, Message Markers only support payloads of type `string`. This is soon to change!
