@@ -34,7 +34,10 @@ namespace Extra.Postman.Editor
             {
                 if (indexProp.intValue == 0 && string.IsNullOrWhiteSpace(asStringProp.stringValue))
                 {
-                    asStringProp.stringValue = (asSOProp.objectReferenceValue as AddressSO).Key;
+                    if (asSOProp.objectReferenceValue)
+                    {
+                        asStringProp.stringValue = (asSOProp.objectReferenceValue as AddressSO).Key;
+                    }
                 }
             }
 

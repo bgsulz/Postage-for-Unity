@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Extra.Postman
@@ -58,11 +59,24 @@ namespace Extra.Postman
                 _responses[address].RemoveAt(index);
         }
 
-        public static void Send<R>(Address address, R parcel)
+        public static void Send<R>(
+            Address address,
+            R parcel
+#if UNITY_EDITOR
+            ,
+            [CallerMemberName] string memberName = default,
+            [CallerFilePath] string sourceFilePath = default,
+            [CallerLineNumber] int sourceLineNumber = default
+#endif
+        )
         {
+#if UNITY_EDITOR
+            Reports.Report(memberName, sourceFilePath, sourceLineNumber, address, parcel);
+#endif
+
             if (!_responses.TryGetValue(address, out var recipients))
                 return;
-                
+
             foreach (var item in recipients)
                 item.Invoke(parcel);
         }
