@@ -1,7 +1,7 @@
 # Postman
 
-| [License](License.md) |
-| - |
+| [License](LICENSE) | [Features](FEATURES.md) |
+| - | - |
 
 ___
 
