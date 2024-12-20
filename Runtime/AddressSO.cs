@@ -20,6 +20,6 @@ namespace Extra.Postman
         public void Send(float p) => Message.Send(this, p);
         public void Send(string p) => Message.Send(this, p);
         public void Send(bool p) => Message.Send(this, p);
-        public void Send(Object p) => Message.Send(this, p);
+        public void Send(UnityEngine.Object p) => Message.Send(this, p);
     }
 }
