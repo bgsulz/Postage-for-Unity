@@ -12,7 +12,7 @@ namespace Extra.Postman
 
         public void RefreshKey() => Key = Guid.NewGuid().ToString();
 
-        public void Send<T>() => Message.Send<T>(this);
+        public void Send<T>(T p) => Message.Send<T>(this, p);
 
         // For UnityEvents:
         public void Send() => Message.Send(this);
