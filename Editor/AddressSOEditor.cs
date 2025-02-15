@@ -11,7 +11,7 @@ namespace Extra.Postman.Editor
             using (new EditorGUILayout.HorizontalScope())
             {
                 GUI.enabled = false;
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("<Key>k__BackingField"));
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("key"));
                 GUI.enabled = true;
 
                 var button = GUILayout.Button(EditorGUIUtility.IconContent("Refresh"),

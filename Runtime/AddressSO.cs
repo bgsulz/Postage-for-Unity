@@ -6,7 +6,8 @@ namespace Extra.Postman
     [CreateAssetMenu(menuName = "Postman/Address")]
     public class AddressSO : ScriptableObject
     {
-        [field: SerializeField] public string Key { get; private set; } = Guid.NewGuid().ToString();
+        [SerializeField] private string key = Guid.NewGuid().ToString();
+        public string Key => key;
 
         public static implicit operator Address(AddressSO so) => Address.Get(so.Key);
 
