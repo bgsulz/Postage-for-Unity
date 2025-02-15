@@ -11,7 +11,7 @@ namespace Extra.Postman
 
         public static implicit operator Address(AddressSO so) => Address.Get(so.Key);
 
-        public void RefreshKey() => Key = Guid.NewGuid().ToString();
+        public void RefreshKey() => key = Guid.NewGuid().ToString();
 
         public void Send<T>(T p) => Message.Send<T>(this, p);
 
