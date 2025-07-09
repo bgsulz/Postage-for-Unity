@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Extra.Postman.Behaviours
+namespace Extra.Postage.Behaviours
 {
     public abstract class MessageBehaviour : MonoBehaviour
     {

@@ -1,9 +1,9 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Extra.Postman.Editor
+namespace Extra.Postage.Editor
 {
-    public class PostmanDebugEditorWindow : EditorWindow
+    public class PostageDebugEditorWindow : EditorWindow
     {
         const float MinTextWidth = 30;
 
@@ -29,10 +29,10 @@ namespace Extra.Postman.Editor
 
         private Vector2 _scrollPosition;
 
-        [MenuItem("Window/Postman Debug")]
+        [MenuItem("Window/Postage Debug")]
         public static void ShowWindow()
         {
-            GetWindow<PostmanDebugEditorWindow>("Postman Debug");
+            GetWindow<PostageDebugEditorWindow>("Postage Debug");
         }
 
         private void OnGUI()

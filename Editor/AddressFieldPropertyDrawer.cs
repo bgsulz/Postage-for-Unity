@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace Extra.Postman.Editor
+namespace Extra.Postage.Editor
 {
     [CustomPropertyDrawer(typeof(AddressField))]
     public class AddressFieldPropertyDrawer : PropertyDrawer

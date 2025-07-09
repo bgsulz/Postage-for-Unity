@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-namespace Extra.Postman.Timeline
+namespace Extra.Postage.Timeline
 {
     [TrackColor(0.2f, 0.8f, 0.8f)]
     [TrackClipType(typeof(MessageMarker))]

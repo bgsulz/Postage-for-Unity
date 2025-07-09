@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Extra.Postman
+namespace Extra.Postage
 {
     public class Address
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Extra.Postman
+namespace Extra.Postage
 {
     [Serializable]
     public class AddressField

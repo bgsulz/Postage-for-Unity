@@ -1,6 +1,6 @@
 using System;
 
-namespace Extra.Postman.Behaviours
+namespace Extra.Postage.Behaviours
 {
     public class MessageBus : IDisposable
     {

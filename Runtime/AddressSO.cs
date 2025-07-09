@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace Extra.Postman
+namespace Extra.Postage
 {
-    [CreateAssetMenu(menuName = "Postman/Address")]
+    [CreateAssetMenu(menuName = "Postage/Address")]
     public class AddressSO : ScriptableObject
     {
         [SerializeField] private string key = Guid.NewGuid().ToString();

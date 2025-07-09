@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace Extra.Postman.Editor
+namespace Extra.Postage.Editor
 {
     [CustomEditor(typeof(AddressSO))]
     public class AddressSOEditor : UnityEditor.Editor

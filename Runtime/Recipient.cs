@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Extra.Postman
+namespace Extra.Postage
 {
     public abstract class Recipient
     {

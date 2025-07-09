@@ -1,4 +1,4 @@
-# Postman
+# Postage
 
 | [License](License.md) |
 | - |
@@ -19,7 +19,7 @@ Shuttle around arbitrary data; use the Inspector as much or as little as you wan
 Just call `Message.Send` and pass in an "address" and optionally an object.
 
 ```c#
-using Extra.Postman;
+using Extra.Postage;
 using UnityEngine;
 
 public class Sender : MonoBehaviour
@@ -35,7 +35,7 @@ public class Sender : MonoBehaviour
 Then receive it elsewhere by subscribing a method to the same "address."
 
 ```c#
-using Extra.Postman;
+using Extra.Postage;
 using UnityEngine;
 
 public class Receiver : MonoBehaviour
@@ -63,10 +63,10 @@ public class Receiver : MonoBehaviour
 
 ## Convenience features
 
-**Postman** is super compact, but there are several convenience features for cleaner and/or more Inspector-forward usage.
+**Postage** is super compact, but there are several convenience features for cleaner and/or more Inspector-forward usage.
 
 ```cs
-using Extra.Postman;
+using Extra.Postage;
 using UnityEngine;
 
 // MessageBehaviour takes care of unsubscribing for you.
@@ -104,7 +104,7 @@ It's easy!
 #### If you have Git...
 1. Open the Unity Editor. On the top ribbon, click Window > Package Manager.
 2. Click the + button in the upper left corner, and click "Add package from git url..."
-3. Enter "https://github.com/bgsulz/Postman-for-Unity.git"
+3. Enter "https://github.com/bgsulz/Postage-for-Unity.git"
 4. Enjoy!
 
 #### If you don't have Git (or want to modify the code)...

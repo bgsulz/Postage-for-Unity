@@ -2,9 +2,9 @@ using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using static Extra.Postman.Timeline.MessageMarker;
+using static Extra.Postage.Timeline.MessageMarker;
 
-namespace Extra.Postman.Timeline.Editor
+namespace Extra.Postage.Timeline.Editor
 {
     [CustomEditor(typeof(MessageMarker))]
     public class MessageMarkerEditor : UnityEditor.Editor

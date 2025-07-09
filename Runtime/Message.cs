@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace Extra.Postman
+namespace Extra.Postage
 {
     public static class Message
     {

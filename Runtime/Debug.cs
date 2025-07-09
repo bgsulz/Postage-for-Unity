@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Extra.Postman
+namespace Extra.Postage
 {
     public class Report
     {

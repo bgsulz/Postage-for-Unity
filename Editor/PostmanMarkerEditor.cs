@@ -1,6 +1,6 @@
 using UnityEditor.Timeline;
 
-public class PostmanMarkerEditor : MarkerEditor
+public class PostageMarkerEditor : MarkerEditor
 {
 
 }

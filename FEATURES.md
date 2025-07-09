@@ -43,7 +43,7 @@ public class SendAndReceive : MonoBehaviour
 ## Debug incoming messages
 #### No more "why is that happening?"
 
-Open the Postman Debug window (`Window > Postman Debug`) to see a live-updating record of all incoming events.
+Open the Postage Debug window (`Window > Postage Debug`) to see a live-updating record of all incoming events.
 
 ## Send messages from the timeline
 #### A simpler alternative to Signal Emitters.
